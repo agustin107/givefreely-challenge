@@ -41,6 +41,7 @@ The app has the following structure:
 repo
  ├── public (static assets)
  ├── src
+ │   ├── __tests__ (tests)
  │   ├── app (Next.js app)
  │   │  │ api (API routes)
  │   ├── components (app-specific components)
