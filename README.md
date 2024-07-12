@@ -41,6 +41,8 @@ The app has the following structure:
 repo
  ├── public (static assets)
  ├── src
+ │   ├── app (Next.js app)
+ │   │  │ api (API routes)
  │   ├── components (app-specific components)
  │   ├── lib (app-specific utilities)
  │   ├── mocks (mock data)
@@ -55,3 +57,15 @@ repo
  └── ...
 
 ```
+
+## Troubleshooting
+
+At times, you might run into issues while setting up the project. Here are some common issues and their solutions:
+
+1. **pnpm not found**: If you get an error saying `pnpm: command not found`, you can install `pnpm` globally by running `npm install -g pnpm`.
+
+2. **Dependencies not installed**: If you get an error saying `dependencies not installed`, you can run `pnpm install` to install the dependencies.
+
+3. **Port already in use**: If you get an error saying `port already in use`, you can change the port by setting the `PORT` environment variable. For example, you can run `PORT=4000 pnpm dev` to run the app on port `4000`.
+
+4. **Infinite loading**: If you get an infinite loading spinner, try refreshing the page. This usually happens when the app was compiled and the in-memory cache is empty or when it's the first time running the app. Subsequent loads should be faster.
