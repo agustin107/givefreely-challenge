@@ -1,3 +1,3 @@
-import { Product } from '@/schemas/product';
+import { Product } from '@/schemas';
 
 export const PRODUCTS: Product[] = [];

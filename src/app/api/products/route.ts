@@ -2,7 +2,7 @@ import { ZodError } from 'zod';
 import { randomUUID } from 'crypto'
 
 import { PRODUCTS } from '@/mocks/db';
-import { ProductSchema } from '@/schemas/product';
+import { ProductSchema } from '@/schemas';
 
 export const GET = async (req: Request, res: Response) => {
   return Response.json({
