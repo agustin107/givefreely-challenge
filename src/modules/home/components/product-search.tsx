@@ -23,7 +23,7 @@ export function ProductSearch({ onSearch }: ProductSearchProps) {
 
   return (
     <div className="flex w-full max-w-sm items-center space-x-2">
-      <Input placeholder="Product name" ref={productNameInput} onKeyDown={handleKeyDown} />
+      <Input placeholder="Product name" ref={productNameInput} onKeyDown={handleKeyDown} role='searchbox' />
       <Button onClick={handleSearch} variant="outline">
         🔍
       </Button>
