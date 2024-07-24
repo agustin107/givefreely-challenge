@@ -1,5 +1,5 @@
-
 import { ProductsContainer } from '@/modules/home';
+import { ProductProvider } from '@/modules/home/context';
 
 export default function Home() {
   return (

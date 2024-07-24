@@ -1,10 +1,10 @@
 import { ZodError } from 'zod';
-import { randomUUID } from 'crypto'
+import { randomUUID } from 'crypto';
 
 import { PRODUCTS } from '@/mocks/db';
 import { ProductSchema } from '@/schemas';
 
-export const GET = async (req: Request, res: Response) => {
+export const GET = async (_req: Request, _res: Response) => {
   return Response.json({
     data: PRODUCTS,
   });
@@ -16,10 +16,24 @@ export const POST = async (req: Request, res: Response) => {
 
     ProductSchema.parse(body);
 
-    PRODUCTS.push({
-      ...body,
-      id: randomUUID()
-    });
+    if (body.id) {
+      const index = PRODUCTS.findIndex((product) => product.id === body.id);
+
+      if (index === -1) {
+        return new Response('Product not found', { status: 404 });
+      }
+
+      PRODUCTS[index] = body;
+
+      return Response.json({
+        data: PRODUCTS,
+      });
+    } else {
+      PRODUCTS.push({
+        ...body,
+        id: randomUUID(),
+      });
+    }
 
     return Response.json({
       data: PRODUCTS,
